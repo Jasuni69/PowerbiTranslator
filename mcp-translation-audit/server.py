@@ -388,7 +388,10 @@ def read_message() -> dict:
     # Read headers
     headers = {}
     while True:
-        line = sys.stdin.buffer.readline().decode('utf-8')
+        line = sys.stdin.buffer.readline()
+        if not line:
+            raise EOFError("stdin closed")
+        line = line.decode('utf-8')
         if line == '\r\n':
             break
         if ':' in line:
