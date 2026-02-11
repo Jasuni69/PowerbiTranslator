@@ -89,8 +89,9 @@ After translation completes:
 | `TRANSLATION_PLAYBOOK.md` | Detailed step-by-step translation checklist (for Claude) |
 | `pbip_translate_display_names.py` | Reusable script: bulk nativeQueryRef → displayName translation |
 | `translation_map_sv-SE.json` | Swedish translation dictionary (109 terms, financial reporting domain) |
+| `mcp-translation-audit/server.py` | MCP server: translation completeness audit (PASS/FAIL verdict) |
 | `POWERBI_MCP_SETUP.md` | MCP server setup instructions (one-time) |
-| `.mcp.json` | MCP server connection config |
+| `.mcp.json` | MCP server connection config (template — fill in your paths) |
 | `.claude/settings.local.json` | Claude Code project settings |
 
 ## Troubleshooting

@@ -14,7 +14,9 @@ Read and follow `TRANSLATION_PLAYBOOK.md` from Phase 0 through Phase 10:
 - **Phases 0-9**: Use MCP tools (ToolSearch for `powerbi-modeling` tools) to translate the semantic model
 - **Phase 10**: Edit report JSON files on disk (visual titles, nativeQueryRef displayName injection, text boxes)
 - For Phase 10 step 10.3, use `pbip_translate_display_names.py` with `translation_map_sv-SE.json` as the base dictionary
-- After all phases: run the validation checks in step 10.7 to confirm zero English remains
+- After all phases: use the `powerbi-translation-audit` MCP tools (ToolSearch for `translation-audit`) to verify zero English remains
+- Call `validate_translation_coverage` with the report's pages_dir for a PASS/FAIL verdict
+- If FAIL, call `scan_english_remaining` for details on what to fix
 
 ## Key files
 
@@ -24,6 +26,7 @@ Read and follow `TRANSLATION_PLAYBOOK.md` from Phase 0 through Phase 10:
 | `POWERBI_MCP_SETUP.md` | MCP server setup (first time only) |
 | `pbip_translate_display_names.py` | Phase 10.3 — bulk nativeQueryRef → displayName |
 | `translation_map_sv-SE.json` | Swedish translation dictionary — start from this, add project-specific terms |
+| `mcp-translation-audit/server.py` | MCP server for validating translation completeness (PASS/FAIL) |
 | `.mcp.json` | MCP server config template — needs real paths filled in |
 
 ## When the existing tools don't cover everything
@@ -45,4 +48,4 @@ The goal: never do more than 5 manual edits of the same type. If there are more,
 - Never change `nativeQueryRef` values. Add `displayName` next to them instead.
 - Never translate conditional formatting selectors (`scopeId.Comparison.Right.Literal.Value`).
 - After editing .pbip JSON, user must close and reopen Power BI Desktop to see changes.
-- Run the final audit (Phase 10.7) before declaring done. No "trust me it's translated" — verify.
+- Run `validate_translation_coverage` before declaring done. No "trust me it's translated" — get a PASS verdict.

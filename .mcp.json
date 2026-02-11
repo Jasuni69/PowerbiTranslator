@@ -4,6 +4,11 @@
       "type": "stdio",
       "command": "C:\\Users\\<USERNAME>\\.vscode\\extensions\\analysis-services.powerbi-modeling-mcp-<VERSION>-win32-x64\\server\\powerbi-modeling-mcp.exe",
       "args": ["--start"]
+    },
+    "powerbi-translation-audit": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-translation-audit/server.py"]
     }
   }
 }
