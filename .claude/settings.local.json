@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nPower BI Report Translator toolkit\n\nReusable workspace for translating Power BI reports from English to Swedish\nusing Claude Code + MCP tools. Includes 10-phase playbook, bulk displayName\ntranslation script, and sv-SE financial reporting dictionary.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  },
+  "enableAllProjectMcpServers": true
+}
